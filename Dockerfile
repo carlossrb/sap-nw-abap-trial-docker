@@ -1,9 +1,13 @@
-FROM opensuse/leap:latest
+FROM ubuntu:latest
 
 ENV LANG=en_US.UTF-8
 
-RUN zypper --non-interactive install --replacefiles which hostname expect net-tools iputils wget vim iproute2 unrar less tar gzip uuidd tcsh libaio
-#RUN zypper refresh && zypper --non-interactive up
+RUN apt-get update && \
+      apt-get -y install sudo
+
+RUN sudo apt-get update 
+
+RUN sudo apt-get install -y hostname expect net-tools iputils-ping wget vim iproute2 unrar less tar gzip uuid-runtime tcsh libaio1 && rm -r /var/lib/apt/lists/*
 
 # uuidd is needed by nw abap
 RUN mkdir /run/uuidd && chown uuidd /var/run/uuidd && /usr/sbin/uuidd
