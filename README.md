@@ -66,11 +66,6 @@ The Dockerfile is based on:
 
 1. Clone this repo
 
-   ```sh
-   git clone https://github.com/nzamani/sap-nw-abap-trial-docker.git
-   cd sap-nw-abap-trial-docker
-   ```
-
 1. Download [SAP NW ABAP 7.52 SP04 Trial from SAP](https://developers.sap.com/germany/trials-downloads.html) (search for **7.52**), then:
 
    - create a folder `sapdownloads` inside the clone
